@@ -3,6 +3,10 @@
 let search = document.getElementById("search");
 let countryInp = document.getElementById("country-inp");
 
+window.addEventListener("load", () => {
+  countryInp.focus();
+});
+
 search.addEventListener("click", (e) => {
   e.preventDefault();
   let countryName = countryInp.value;
@@ -31,6 +35,7 @@ search.addEventListener("click", (e) => {
           data[0].maps.googleMaps
         }'>Google Map</a></p>
         `;
+      countryInp.value = "";
     })
     .catch(() => {
       if (countryName.length == 0) {
